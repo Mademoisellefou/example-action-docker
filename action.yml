@@ -1,0 +1,15 @@
+name: 'python-action'
+description: 'Runs Python cli'
+branding:
+  icon: 'command'
+  color: 'red'
+inputs:
+  command:
+    description: 'Python command to run'
+    default: 'ls'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
